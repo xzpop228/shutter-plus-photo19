@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Шапка с логотипом */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logo-top {
+    display: block;
+    font-size: 2rem;
+}
+
+.logo-bottom {
+    display: block;
+    font-size: 2rem;
+    margin-top: -5px;
+}
+
+.plus {
+    color: #ff3366;
+    font-size: 2.5rem;
+}
+
+/* Главный экран */
+.main-screen {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://i.pinimg.com/736x/35/89/56/3589567e9ff22107f5f9905052f9d2a6.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.main-content {
+    margin-top: 60px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-calc {
+    background-color: #ff3366;
+    color: white;
+}
+
+.btn-order {
+    background-color: white;
+    color: #333;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-calc:hover {
+    background-color: #e62e5c;
+}
+
+.btn-order:hover {
+    background-color: #f0f0f0;
+}
+
+/* Кнопки "О НАС" и "ПРИМЕРЫ НАШИХ РАБОТ" */
+.secondary-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-secondary {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFade 0.5s;
+}
+
+@keyframes modalFade {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.price-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.price-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-name {
+    font-weight: 500;
+}
+
+.price-value {
+    font-weight: bold;
+    color: #ff3366;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.modal-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-back {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-submit {
+    background-color: #ff3366;
+    color: white;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-submit:hover {
+    background-color: #e62e5c;
+}
+
+/* Экран "О НАС" */
+.about-screen {
+    background-color: white;
+    padding: 80px 20px 50px;
+    display: none;
+    min-height: 100vh;
+}
+
+.about-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.about-text {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border: 3px solid #ff3366;
+}
+
+.member-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.member-role {
+    color: #ff3366;
+    font-size: 0.9rem;
+}
+
+/* Экран "Почему мы?" */
+.why-us-screen {
+    background-color: white;
+    padding: 80px 20px 50px;
+    display: none;
+    min-height: 100vh;
+}
+
+.why-us-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ff3366;
+    font-weight: bold;
+}
+
+.feature-desc {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Экран портфолио */
+.portfolio-screen {
+    background-color: #f9f9f9;
+    padding: 80px 20px 50px;
+    display: none;
+    min-height: 100vh;
+}
+
+.portfolio-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+/* Экран успешного заказа */
+.success-screen {
+    background-color: white;
+    padding: 80px 20px 50px;
+    display: none;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.success-header {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.success-message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Кнопка назад */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .logo-top, .logo-bottom {
+        font-size: 1.6rem;
+    }
+    
+    .plus {
+        font-size: 2rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .secondary-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn, .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .logo-top, .logo-bottom {
+        font-size: 1.2rem;
+    }
+    
+    .plus {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-btn {
+        width: 100%;
+    }
+}
